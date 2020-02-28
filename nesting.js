@@ -11,34 +11,34 @@
 // Do not edit the code below.
 var employees = [
   {
-    "firstName": "Von",
-    "lastName": "Budibent",
-    "email": "vbudibent0@163.com",
-    "department": "Sales"
+    firstName: "Von",
+    lastName: "Budibent",
+    email: "vbudibent0@163.com",
+    department: "Sales"
   },
   {
-    "firstName": "Catherina",
-    "lastName": "Swalowe",
-    "email": "cswalowe1@example.com",
-    "department": "Engineering"
+    firstName: "Catherina",
+    lastName: "Swalowe",
+    email: "cswalowe1@example.com",
+    department: "Engineering"
   },
   {
-    "firstName": "Theo",
-    "lastName": "Trill",
-    "email": "ttrill2@sina.com.cn",
-    "department": "Services"
+    firstName: "Theo",
+    lastName: "Trill",
+    email: "ttrill2@sina.com.cn",
+    department: "Services"
   },
   {
-    "firstName": "Elsy",
-    "lastName": "McCrorie",
-    "email": "emccrorie3@netscape.com",
-    "department": "Legal"
+    firstName: "Elsy",
+    lastName: "McCrorie",
+    email: "emccrorie3@netscape.com",
+    department: "Legal"
   },
   {
-    "firstName": "Lorie",
-    "lastName": "Handsheart",
-    "email": "lhandsheart4@fotki.com",
-    "department": "Research and Development"
+    firstName: "Lorie",
+    lastName: "Handsheart",
+    email: "lhandsheart4@fotki.com",
+    department: "Research and Development"
   }
 ];
 // Do not edit the code above.
@@ -52,7 +52,27 @@ var employees = [
 
 //Code Here
 
+function employeeUpdater() {
+  let filterEmply = employees.filter((el, i, arr) => {
+    return el.firstName !== "Theo";
+  });
 
+  let newEmployees = filterEmply.map((el, i, arr) => {
+    if (el.firstName === "Lorie") {
+      return {
+        firstName: "Lorie",
+        lastName: "Handsheart",
+        email: "lhandsheart4@fotki.com",
+        department: "HR"
+      };
+    }
+
+    return el;
+  });
+  return newEmployees;
+}
+
+// console.log(employeeUpdater());
 
 ////////// PROBLEM 2 //////////
 
@@ -69,25 +89,36 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+function removeDuplicates() {
+  let arr = workplaceAccidents;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = arr.length - 1; j > i; j--) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j, 1);
+      }
+    }
+  }
+  return arr;
+}
 
-
+console.log(removeDuplicates());
 
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
 var cat = {
-  name: 'Fluffy',
+  name: "Fluffy",
   catFriends: [
     {
-      name: 'Grumpy',
-      activities: ['be grumpy', 'eat food']
-    }, 
+      name: "Grumpy",
+      activities: ["be grumpy", "eat food"]
+    },
     {
-      name: 'Lazy Bones',
-      activities: ['sleep', 'pre-sleep naps']
+      name: "Lazy Bones",
+      activities: ["sleep", "pre-sleep naps"]
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -97,36 +128,34 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
-
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
 var myCar = {
-  make: 'Toyota',
-  model: 'Corolla',
+  make: "Toyota",
+  model: "Corolla",
   year: 1992,
   accidents: [
     {
-      date: '3/15/93',
-      damage: '$5,000',
+      date: "3/15/93",
+      damage: "$5,000",
       atFaultForAccident: true
     },
     {
-      date: '7/4/98',
-      damage: '$2,200',
+      date: "7/4/98",
+      damage: "$2,200",
       atFaultForAccident: true
     },
     {
-      date: '6/22/99',
-      damage: '$7,900',
+      date: "6/22/99",
+      damage: "$7,900",
       atFaultForAccident: true
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -140,12 +169,23 @@ var myCar = {
 
 //Code Here
 
-
+function recordCleaner() {
+  let arr = myCar.accidents;
+  arr.map(el => {
+    el.atFaultForAccident = false;
+  });
+}
+// recordCleaner()
+// console.log(myCar);
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [
+  [1, 2, 3, 4],
+  [5, 6],
+  [7, 8, 9, 10, 11]
+];
 // Do not edit the code above.
 
 /*
@@ -156,7 +196,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
-
-//Code Here
-
+function looper() {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      if ( numsArr[i][j] % 2 === 0 ) {
+       numsArr[i][j] = 'even';
+      } else {
+       numsArr[i][j] = 'odd';
+      }
+    }
+  }
+  return numsArr;
+}
 
