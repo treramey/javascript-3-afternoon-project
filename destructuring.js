@@ -10,11 +10,11 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
   year: 1994
-}
+};
 // Do not edit the code above.
 
 /*
@@ -23,7 +23,10 @@ var carDetails = {
 
 //Code Here
 
-
+let color = carDetails.color;
+let make = carDetails.make;
+let model = carDetails.model;
+let year = carDetails.year;
 
 ////////// PROBLEM 2 //////////
 
@@ -33,15 +36,16 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  let title = obj.title;
+  let firstName = obj.firstName;
+  let lastName = obj.lastName;
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -55,7 +59,14 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation(obj) {
+  let utah = obj.utah;
+  let california = obj.california;
+  let texas = obj.texas;
+  let arizona = obj.arizona;
 
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -68,8 +79,15 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(obj) {
+  newArr = [];
+  let carb = obj.carb;
+  let fat = obj.fat;
+  let protein = obj.protein;
+  newArr.push(carb, fat, protein);
 
-
+  return newArr;
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -87,8 +105,13 @@ function greeting( obj ) {
 
 //Code Here
 
+function largeNumbers(obj) {
+  let first = obj.first;
+  let second = obj.second;
+  let third = obj.third;
 
-
+  return Math.min(first, second, third);
+}
 ////////// PROBLEM 6 //////////
 
 /*
@@ -99,4 +122,15 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function numberGroups(obj) {
+  let a = obj.a;
+  let b = obj.b;
+  let c = obj.c;
+  if (a.length > b.length && a.length > c.length) {
+    return a;
+  } else if (b.length > a.length && b.length > c.length) {
+    return b;
+  } else {
+    return c;
+  }
+}
