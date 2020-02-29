@@ -11,13 +11,13 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
@@ -40,8 +40,14 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let str = ""
+  for(let peram in obj){
+    str += obj[peram]  ;
+  }
+  return str;
 }
+
+console.log(showValues(values))
 
 
 
@@ -54,6 +60,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+
+function greaterThan10(obj) {
+  for(let prop in obj){
+    if (obj[prop] > 10) {
+      obj[prop] = 0
+    }
+  }
+  return obj;
+}
 
 
 
@@ -68,6 +83,14 @@ function showValues( obj ) {
 //Code Here
 
 
+function double(obj) {
+  for(let prop in obj){
+    obj[prop]*=2 
+  }
+  return obj
+}
+
+
 
 ////////// PROBLEM 4 //////////
 
@@ -80,7 +103,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj) {
+  let empStr = '';
+  for( let prop in obj){
+    if (prop.includes('sh')) {
+      empStr+= obj[prop]
+    }
+  }
+  return empStr;
+}
 
 
 /* 
@@ -112,6 +143,11 @@ function showValues( obj ) {
 
 //Code Here
 
+function removePassword(obj) {
+  delete obj.password;
+  return obj;
+}
+
 
 
 ////////// PROBLEM 6 //////////
@@ -131,6 +167,17 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+function deleteNumbers(obj) {
+  for(let prop in obj){
+    if (obj[prop] > 100) {
+      delete obj[prop];
+      
+    }
+  }
+  return obj;
+}
+
+console.log(deleteNumbers(deleteTheBigNumbers))
 
 
 ////////// PROBLEM 7 //////////
@@ -144,7 +191,26 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+// cat = {
+//   kitty: 2,
+//   dog: 3,
+//   cat: 4
+// }
 
+
+function startsWithK(obj) {
+  // console.log(obj);
+  for(let prop in obj){
+    if (prop.startsWith('k')) {
+      delete obj[prop]
+      
+    }
+  }
+  return obj;
+
+}
+
+// console.log(startsWithK(cat));
 
 ////////// PROBLEM 8 //////////
 
@@ -159,4 +225,25 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+let test = {
+
+  one: "happiness but no money",
+  two: "puppies are always a treasure",
+  three: "rocks, lots of rocks"
+  
+
+}
+
+function hiddenTreasure(obj) {
+  console.log(obj);
+
+  for(let prop in obj){
+    if (!obj[prop].includes('treasure')) {
+      delete obj[prop]
+    }
+  }
+  return obj
+}
+
+console.log(hiddenTreasure(test))
 

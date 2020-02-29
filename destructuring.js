@@ -126,6 +126,7 @@ function numberGroups(obj) {
   let a = obj.a;
   let b = obj.b;
   let c = obj.c;
+  
   if (a.length > b.length && a.length > c.length) {
     return a;
   } else if (b.length > a.length && b.length > c.length) {
